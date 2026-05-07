@@ -1,0 +1,62 @@
+# Core deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio  # optional, pulled in by some torch installs
+
+# Diffusion models
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.28.0
+
+# Adversarial attack libraries
+# AutoAttack: pip install git+https://github.com/fra31/auto-attack
+autoattack
+
+# ODE solvers (for DiffPure guided diffusion ODE)
+torchdiffeq>=0.2.3
+
+# SDE solvers (for score-based SDE runners)
+torchsde>=0.2.6
+
+# AEROBLADE dependencies
+lpips>=0.1.4
+pyiqa  # perceptual quality metrics
+
+# CLIP (OpenAI)
+# pip install git+https://github.com/openai/CLIP.git
+clip  # or: openai-clip
+
+# Image processing
+Pillow>=9.0.0
+opencv-python>=4.7.0  # cv2
+numpy>=1.24.0
+
+# Data / ML utilities
+scikit-learn>=1.3.0
+scipy>=1.10.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
+PyYAML>=6.0
+
+# Augmentation
+albumentations>=1.3.0
+
+# Distributed training utilities
+mpi4py  # optional, required by guided_diffusion/dist_util.py
+
+# Misc
+tabulate>=0.9.0
+blobfile>=2.0.0
+joblib>=1.3.0
+packaging>=23.0
+
+# Logging / experiment tracking
+tensorboard>=2.13.0
+
+# Adversarial robustness benchmarks (optional, for eval scripts)
+# pip install git+https://github.com/RobustBench/robustbench
+# robustbench
+
+# AEROBLADE install (from source, Python 3.11 env only)
+# cd aeroblade && pip install -e .
