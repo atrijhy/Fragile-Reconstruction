@@ -1,6 +1,6 @@
 # Adversarial Attacks Against Deepfake Detectors
 
-Code for the paper: **"Adversarial Robustness of Deepfake Detectors"** (placeholder title).
+Code for the paper: **"Fragile-Reconstruction"** (placeholder title).
 
 We study adversarial attacks against three state-of-the-art deepfake detectors —
 [DIRE](https://github.com/ZhendongWang6/DIRE),
