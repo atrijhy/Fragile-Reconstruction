@@ -22,7 +22,7 @@ class Res50Feature(nn.Module):
         super(Res50Feature, self).__init__()
         self.model = resnet50(pretrained=False)
         state_dict = torch.load(
-            '/home/petterluo/resnet50-19c8e357.pth')
+            os.environ.get('RESNET50_CKPT', 'resnet50-19c8e357.pth'))
         self.model.load_state_dict(state_dict)
         print('load ok')
         self.model.fc = nn.Identity()
@@ -139,7 +139,7 @@ class ResnetBaseline(nn.Module):
         super(ResnetBaseline, self).__init__()
         self.model = resnet50()
         self.model.load_state_dict(torch.load(
-            '/home/petterluo/pretrained_models/resnet50-19c8e357.pth'))
+            os.environ.get('RESNET50_CKPT', 'resnet50-19c8e357.pth')))
         self.model.fc = nn.Identity()
         # self.clip_model, self.preprocess = clip.load(type_to_path[clip_type], device='cpu', jit=False)
         # self.text_input = clip.tokenize(['Real Photo', 'Synthetic Photo', 'Real Painting', 'Synthetic Painting'])
@@ -569,7 +569,7 @@ class LASTEDWLoss(nn.Module):
     def __init__(self, num_class=4):
         super(LASTEDWLoss, self).__init__()
         self.clip_model, self.preprocess = clip.load(
-            "/home/petterluo/clip_models/RN50x64.pt", device='cpu', jit=False)
+            os.environ.get('CLIP_RN50x64_PATH', 'RN50x64.pt'), device='cpu', jit=False)
         # self.output_layer = Sequential(
         #     nn.Linear(1024, 1280),
         #     nn.GELU(),
